@@ -12,21 +12,19 @@ const loadAllData = () => {
 const displayContainer = searchData => {
     searchData.forEach(search => {
         console.log(search);
-
         const searchContainer = document.getElementById('search-container');
 
         const searchDiv = document.createElement('div');
         searchDiv.innerHTML = ` 
-        <div class="card card-side bg-base-100 shadow-xl ">
-            <figure><img src=""/></figure>
-        <div class="card-body">
-            <h2 class="</h2>
-            <p></p>
-            <div class="card-actions justify-end">
-        <button class="btn btn-primary">Watch</button>
+        <div class=" bg-base-100 shadow-xl flex rounded-md">
+            <figure class="w-[40%] "><img class=" h-full rounded-md" src="${search.strMealThumb}"/></figure>
+            <div class=" p-5 w-[60%] ">
+                <h2 class="text-xl font-bold">${search.strMeal.slice(0, 15) + "..."}</h2>
+                <p>${search.strInstructions.slice(0,80) + "..."}</p>
+            </div>
         </div>
-        </div>
-        </div>
+
+
         `;
         searchContainer.appendChild(searchDiv);
 
